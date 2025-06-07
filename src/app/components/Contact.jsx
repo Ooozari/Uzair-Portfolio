@@ -38,40 +38,42 @@ export default function Contact() {
   }
 
   const handleSubmit = async (e) => {
-  e.preventDefault()
-
-  if (!formData.name || !formData.email || !formData.message) {
-    alert("Name, Email, and Message are required.")
-    return
-  }
-
-  setLoading(true)
-
-  const form = new FormData()
-  Object.entries(formData).forEach(([key, value]) => form.append(key, value))
-
-  try {
-    const response = await fetch('https://getform.io/f/aolozkrb', {
-      method: 'POST',
-      body: form
-    })
-
-    if (response.ok) {
-      setFormData({ name: '', company: '', email: '', message: '' })
-      setFocusedFields({ name: false, company: false, email: false, message: false })
-      setSuccess(true)
-      setTimeout(() => setSuccess(false), 2000)
-    } else {
-      alert('Something went wrong. Please try again.')
+    e.preventDefault()
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Name, Email, and Message are required.")
+      return
     }
-  } catch (error) {
-    alert('Failed to send message.')
-    console.error(error)
+
+    setLoading(true)
+
+    const data = {
+      access_key: "036c3694-be10-4e29-bf29-f955bffa0b64",
+      ...formData
+    }
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      })
+
+      const result = await response.json()
+      if (result.success) {
+        setFormData({ name: '', company: '', email: '', message: '' })
+        setFocusedFields({ name: false, company: false, email: false, message: false })
+        setSuccess(true)
+        setTimeout(() => setSuccess(false), 3000)
+      } else {
+        alert('Submission failed. Please try again.')
+      }
+    } catch (error) {
+      alert('Failed to send message.')
+      console.error(error)
+    }
+
+    setLoading(false)
   }
-
-  setLoading(false)
-}
-
 
   return (
     <section id="contact" className="py-20 bg-light-bg dark:bg-dark-bg">
@@ -101,6 +103,7 @@ export default function Contact() {
                     onBlur={() => handleBlur('message')}
                     className="w-full px-4 py-3 bg-transparent border-b border-gray-300 dark:border-gray-600 focus:border-blue-500 outline-none transition-colors min-h-[120px]"
                     placeholder="Message"
+                    required={field === 'message'}
                   />
                 ) : (
                   <input
@@ -112,6 +115,7 @@ export default function Contact() {
                     onBlur={() => handleBlur(field)}
                     className="w-full px-4 py-3 bg-transparent border-b border-gray-300 dark:border-gray-600 focus:border-blue-500 outline-none transition-colors"
                     placeholder={field.charAt(0).toUpperCase() + field.slice(1) + (field === 'company' ? ' (optional)' : '')}
+                    required={field !== 'company'}
                   />
                 )}
                 {focusedFields[field] && (
