@@ -1,5 +1,4 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi'
 import Link from 'next/link'
@@ -27,14 +26,14 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-5 z-50 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-sm border-2 shadow-2xl shadow-gray-500/40 rounded-3xl border-light-bg/20 dark:border-dark-bg/20 w-[95%] sm:max-w-[80%] md:max-w-[70%] lg:max-w-[50%] mx-auto">
+    <header className="sticky top-5 z-99 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-sm border-2 shadow-2xl shadow-gray-500/40 rounded-3xl border-light-bg/20 dark:border-dark-bg/20 w-[95%] md:max-w-2xl mx-auto">
       <div className="container mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
         <h1 className="text-3xl sm:text-3xl font-bold italic tracking-tight text-blue-600 dark:text-blue-400">
           Uzair<span className="text-black dark:text-white">.</span>
         </h1>
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 sm:gap-8">
-          {['skills', 'projects', 'education', 'contact'].map((item) => (
+          {['Projects', 'Experience', 'Education', 'Contact'].map((item) => (
             <Link
               key={item}
               href={`#${item}`}

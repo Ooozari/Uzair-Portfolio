@@ -1,15 +1,15 @@
-import { Hero,Skills,Education,Contact,Projects } from '@/components/shared'
+import { Hero,Skills,Education,Contact,Projects, Code } from '@/components/shared'
 import { Footer,Header } from '../layout'
 
 export default function LandingPage() {
   return (
     <div>
+      <Code />
       <Hero />
       <Skills />
       <Projects />
       <Education />
       <Contact />
-      <Footer />
     </div>
   )
 }
