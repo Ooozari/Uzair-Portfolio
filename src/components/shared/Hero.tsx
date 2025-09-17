@@ -1,9 +1,9 @@
-'use client'
+"use client";
 import Image from "next/image";
-import { FiDownload, FiLinkedin, FiGithub, FiMail } from 'react-icons/fi'
-import { FaReact, FaHtml5, FaCss3Alt } from 'react-icons/fa'
-import { SiNextdotjs, SiTailwindcss } from 'react-icons/si'
-import { useEffect, useRef } from 'react'
+import { FiDownload, FiLinkedin, FiGithub, FiMail } from "react-icons/fi";
+import { FaReact, FaHtml5, FaCss3Alt } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { useEffect, useRef } from "react";
 
 export default function Hero() {
   // ✅ Explicit type for ref
@@ -14,7 +14,6 @@ export default function Hero() {
     if (!cube) return;
 
     let rotation = 0;
-    // ✅ Explicit type for requestAnimationFrame
     let animationFrameId: number;
 
     const animate = () => {
@@ -29,8 +28,7 @@ export default function Hero() {
   }, []);
 
   return (
-  
- <section
+    <section
       id="hero"
       className="min-h-screen flex items-center justify-center bg-light-bg/5 dark:bg-dark-bg/5"
     >
@@ -38,7 +36,6 @@ export default function Hero() {
         {/* Left Section */}
         <div className="w-full md:w-1/2 flex flex-col justify-center mb-12 md:mb-0">
           <div className="flex items-center mb-6">
-
             <div className="w-16 h-16 rounded-full bg-blue-500/10 border-2 border-blue-500/30 p-1 mr-4 overflow-hidden">
               <Image
                 src="/pp.png"
@@ -54,7 +51,7 @@ export default function Hero() {
               <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                 <span className="mr-1">📍</span>
                 <span>
-                  Faisalabad, Pakistan{' '}
+                  Faisalabad, Pakistan{" "}
                   <Image
                     src="/flag.png"
                     alt="Pakistan Flag"
@@ -62,7 +59,6 @@ export default function Hero() {
                     height={20}
                     className="inline-block align-middle"
                   />
-
                 </span>
               </div>
             </div>
@@ -73,9 +69,10 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg mb-6 max-w-lg">
-            I build exceptional digital experiences with modern web technologies.
-            Passionate about creating responsive, performant, and accessible websites.
-            Currently focused on React ecosystem and Next.js applications.
+            I build exceptional digital experiences with modern web
+            technologies. Passionate about creating responsive, performant, and
+            accessible websites. Currently focused on React ecosystem and
+            Next.js applications.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -117,22 +114,22 @@ export default function Hero() {
           <div
             className="relative"
             style={{
-              width: 'clamp(10rem, 20vw, 13rem)',
-              height: 'clamp(10rem, 20vw, 13rem)',
-              perspective: '1000px',
+              width: "clamp(10rem, 20vw, 13rem)",
+              height: "clamp(10rem, 20vw, 13rem)",
+              perspective: "1000px",
             }}
           >
             <div
               ref={cubeRef}
               className="absolute w-full h-full"
-              style={{ transformStyle: 'preserve-3d' }}
+              style={{ transformStyle: "preserve-3d" }}
             >
               {/* Front */}
               <div
                 className="absolute w-full h-full flex items-center justify-center border-2 border-white/50 shadow-lg rounded-lg"
                 style={{
                   transform: `translateZ(clamp(80px, 15vw, 102px))`,
-                  backfaceVisibility: 'hidden',
+                  backfaceVisibility: "hidden",
                 }}
               >
                 <SiNextdotjs className="text-[clamp(2rem,5vw,3.75rem)] text-shadow-white" />
@@ -142,17 +139,17 @@ export default function Hero() {
                 className="absolute w-full h-full flex items-center justify-center border-2 border-white/50 shadow-lg rounded-lg"
                 style={{
                   transform: `rotateY(180deg) translateZ(clamp(80px, 15vw, 102px))`,
-                  backfaceVisibility: 'hidden',
+                  backfaceVisibility: "hidden",
                 }}
               >
-                <FaReact className="text-[clamp(2rem,5vw,3.75rem)] text-blue-400" />
+                <FaReact className="text-[clamp(2rem,5vw,3.75rem)] text-blue-400 shadow-blue-300 shadow-2xl" />
               </div>
               {/* Left */}
               <div
                 className="absolute w-full h-full flex items-center justify-center border-2 border-white/50 shadow-lg rounded-lg"
                 style={{
                   transform: `rotateY(-90deg) translateZ(clamp(80px, 15vw, 102px))`,
-                  backfaceVisibility: 'hidden',
+                  backfaceVisibility: "hidden",
                 }}
               >
                 <SiTailwindcss className="text-[clamp(2rem,5vw,3.75rem)] text-sky-400" />
@@ -162,7 +159,7 @@ export default function Hero() {
                 className="absolute w-full h-full flex items-center justify-center border-2 border-white/50 shadow-lg rounded-lg"
                 style={{
                   transform: `rotateY(90deg) translateZ(clamp(80px, 15vw, 102px))`,
-                  backfaceVisibility: 'hidden',
+                  backfaceVisibility: "hidden",
                 }}
               >
                 <FaHtml5 className="text-[clamp(2rem,5vw,3.75rem)] text-orange-500" />
@@ -172,7 +169,7 @@ export default function Hero() {
                 className="absolute w-full h-full flex items-center justify-center border-2 border-white/50 shadow-lg rounded-lg"
                 style={{
                   transform: `rotateX(90deg) translateZ(clamp(80px, 15vw, 102px))`,
-                  backfaceVisibility: 'hidden',
+                  backfaceVisibility: "hidden",
                 }}
               >
                 <FaReact className="text-[clamp(2rem,5vw,3.75rem)] text-cyan-400" />
@@ -182,7 +179,7 @@ export default function Hero() {
                 className="absolute w-full h-full flex items-center justify-center border-2 border-white/50 shadow-lg rounded-lg"
                 style={{
                   transform: `rotateX(-90deg) translateZ(clamp(80px, 15vw, 102px))`,
-                  backfaceVisibility: 'hidden',
+                  backfaceVisibility: "hidden",
                 }}
               >
                 <FaCss3Alt className="text-[clamp(2rem,5vw,3.75rem)] text-[#2965f1]" />
@@ -192,9 +189,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
-
-
-

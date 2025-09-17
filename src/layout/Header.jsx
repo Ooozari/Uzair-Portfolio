@@ -1,39 +1,40 @@
-'use client'
-import { useState, useEffect } from 'react'
-import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi'
-import Link from 'next/link'
-
+"use client";
+import { useState, useEffect } from "react";
+import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
+import Link from "next/link";
+import Button from "@/components/ui/button";
 export default function Header() {
-  const [darkMode, setDarkMode] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [darkMode, setDarkMode] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const isDark =
-        localStorage.getItem('darkMode') === 'true' ||
-        (!localStorage.getItem('darkMode') &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-      setDarkMode(isDark)
-      document.documentElement.classList.toggle('dark', isDark)
+        localStorage.getItem("darkMode") === "true" ||
+        (!localStorage.getItem("darkMode") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches);
+      setDarkMode(isDark);
+      document.documentElement.classList.toggle("dark", isDark);
     }
-  }, [])
+  }, []);
 
   const toggleDarkMode = () => {
-    const newMode = !darkMode
-    setDarkMode(newMode)
-    localStorage.setItem('darkMode', String(newMode))
-    document.documentElement.classList.toggle('dark', newMode)
-  }
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem("darkMode", String(newMode));
+    document.documentElement.classList.toggle("dark", newMode);
+  };
 
   return (
     <header className="sticky top-5 z-99 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-sm border-2 shadow-2xl shadow-gray-500/40 rounded-3xl border-light-bg/20 dark:border-dark-bg/20 w-[95%] md:max-w-2xl mx-auto">
       <div className="container mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
-        <h1 className="text-3xl sm:text-3xl font-bold italic tracking-tight text-blue-600 dark:text-blue-400">
-          Uzair<span className="text-black dark:text-white">.</span>
-        </h1>
+          <h1 className="text-3xl sm:text-3xl font-bold italic tracking-tight text-blue-600 dark:text-blue-400">
+            Uzair<span className="text-black dark:text-white">.</span>
+          </h1>
+
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 sm:gap-8">
-          {['Projects', 'Experience', 'Education', 'Contact'].map((item) => (
+          {["Projects", "Experience", "Education", "Contact"].map((item) => (
             <Link
               key={item}
               href={`#${item}`}
@@ -42,6 +43,7 @@ export default function Header() {
               {item}
               <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-500 group-hover:w-full group-hover:left-0 transition-all duration-300"></span>
             </Link>
+            
           ))}
         </nav>
 
@@ -78,7 +80,7 @@ export default function Header() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-6 pb-4 flex flex-col gap-4 animate-fade-in">
-          {['skills', 'projects', 'education', 'contact'].map((item) => (
+          {["skills", "projects", "education", "contact"].map((item) => (
             <Link
               key={item}
               href={`#${item}`}
@@ -91,5 +93,5 @@ export default function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }
