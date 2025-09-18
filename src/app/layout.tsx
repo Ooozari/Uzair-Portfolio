@@ -19,7 +19,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.className} bg-light-bg text-light-text`}
+      className={`${inter.className}`}
     >
       <body>
         <Header />
