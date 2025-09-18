@@ -21,22 +21,6 @@ export default function Projects() {
       ],
       images: ["/shifahub1.png", "/shifahub2.png", "/shifahub1.png"]
     },
-    {
-      title: "BitGazer",
-      description: "Online trading platform for cryptocurrencies",
-      features: [
-        "Real-time price tracking",
-        "Portfolio management",
-        "Secure transactions",
-        "Advanced charting"
-      ],
-      techStack: [
-        { name: "Next.js", icon: <SiNextdotjs /> },
-        { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-        { name: "MySQL", icon: <SiMysql /> }
-      ],
-      images: ["/bitgazer1.jpg", "/bitgazer2.jpg", "/bitgazer3.jpg"]
-    }
   ]
 
   return (

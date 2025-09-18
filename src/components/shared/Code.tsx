@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Code() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen text-center bg-gradient-to-b from-gray-900 via-black to-gray-950 text-white px-6">
+    <section className="relative flex flex-col items-center justify-center min-h-screen text-center bg-gradient-to-b from-gray-900 via-black to-gray-950 text-white px-6 h-full">
       {/* Heading */}
       <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
         Full-Stack Developer in Progress 🚀

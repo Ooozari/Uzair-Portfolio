@@ -4,6 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-light: var(--text-light);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -44,6 +45,9 @@
 }
 
 :root {
+  /* Color Schemes */
+  --text-light: oklch(0.872 0.01 258.3);
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -79,6 +83,9 @@
 }
 
 .dark {
+  /* Color Schemes */
+  --text-light: oklch(0.872 0.01 258.3);
+
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
@@ -118,5 +125,52 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Add anchor positioning utilities */
+@layer utilities {
+  .fancy-nav {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .fancy-bg {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    pointer-events: none;
+
+    top: var(--top, 100%);
+    left: var(--left, 0);
+    width: var(--width, 0);
+    height: var(--height, 0);
+
+    transition: 500ms
+      linear(
+        0,
+        0.029 1.6%,
+        0.123 3.5%,
+        0.651 10.6%,
+        0.862 14.1%,
+        1.002 17.7%,
+        1.046 19.6%,
+        1.074 21.6%,
+        1.087 23.9%,
+        1.086 26.6%,
+        1.014 38.5%,
+        0.994 46.3%,
+        1
+      );
+  }
+
+  .nav-item:hover ~ .fancy-bg {
+    --top: calc(var(--hover-top));
+    --left: calc(var(--hover-left));
+    --width: calc(var(--hover-width));
+    --height: calc(var(--hover-height));
   }
 }
