@@ -4,7 +4,29 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-light: var(--text-light);
+  /* Text Colors */
+  --color-light: var(--text-primary);
+  --color-light-muted: var(--text-secondary);
+
+  /* Primary Colors */
+  --color-primary: var(--primary-color);
+  --color-primary-alt: var(--primary-color-alt);
+
+  --color-logo-primary: var(--logo-primary);
+  --color-logo-secondary: var(--logo-secondary);
+  --color-logo-dot-light: var(--logo-dot-light);
+  --color-logo-dot-dark: var(--logo-dot-dark);
+
+
+ --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-glow: var(--shadow-glow);
+
+  --color-page-bg: var(--page-bg);
+  --color-page-fg: var(--page-fg);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -45,8 +67,37 @@
 }
 
 :root {
-  /* Color Schemes */
-  --text-light: oklch(0.872 0.01 258.3);
+  /* ===============================
+     🌞 Light Mode Text Colors
+     =============================== */
+  --text-primary: #1a1a1a; /* Main readable text (almost black) */
+  --text-secondary: #6b7280; /* Muted text (gray-500) */
+
+  /* ===============================
+     🎨 Brand / Primary Colors (Orange Theme)
+     =============================== */
+  --primary-color: #f97316; /* Vibrant Orange */
+  --primary-color-alt: #fb923c; /* Softer Orange for hover/gradient */
+
+  /* Logo Colors (Light Mode) */
+  --logo-primary: #f97316; /* Vibrant Orange */
+  --logo-secondary: #fb923c; /* Light Orange */
+  --logo-dot-light: #1a1a1a; /* Black for dot */
+
+  /* ===============================
+   🌞 Light Mode Background & Foreground
+   =============================== */
+  --page-bg: #f8fafc; /* Soft Snow - A slightly off-white for a warm, clean background */
+  --page-fg: #111827; /* Deep Graphite - A near-black for primary text, sharp and readable */
+
+  /* ===============================
+     🌞 Light Mode Shadows
+     =============================== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05); /* subtle, for inputs */
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);  /* cards & small sections */
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15); /* modals, dropdowns */
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.2); /* hero/major elements */
+  --shadow-glow: 0 0 20px rgba(249, 115, 22, 0.4); /* orange glow for accents */
 
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -83,8 +134,28 @@
 }
 
 .dark {
-  /* Color Schemes */
-  --text-light: oklch(0.872 0.01 258.3);
+  /* 🌙 Dark Mode Text Colors */
+  --text-primary: #f5f5f5; /* Main readable text (soft white) */
+  --text-secondary: #9ca3af; /* Muted text (gray-400) */
+
+
+  /* ===============================
+   🌙 Dark Mode Background & Foreground
+   =============================== */
+--page-bg: #0f172a; /* Midnight Slate - deep blue-gray, softer than pure black */
+--page-fg: #f9fafb; /* Soft Pearl - near-white, gentle on the eyes */
+
+
+
+/* ===============================
+     🌙 Dark Mode Shadows
+     =============================== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);  /* stronger base shadow */
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.6);  /* cards & containers */
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.7); /* modals */
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.8); /* large popups */
+  --shadow-glow: 0 0 25px rgba(249, 115, 22, 0.5); /* brighter orange glow */
+
 
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -123,13 +194,21 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
 }
 
 /* Add anchor positioning utilities */
 @layer utilities {
+  .text-logo-primary {
+    background: linear-gradient(
+      to right,
+      var(--logo-primary),
+      var(--logo-secondary)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   .fancy-nav {
     position: relative;
     isolation: isolate;

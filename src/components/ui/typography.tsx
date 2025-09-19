@@ -68,6 +68,7 @@ const paragraphVariants = cva("", {
       xl: "text-[14px] sm:text-[16px] md:text-[18px]", // using
       large: "text-[14px] md:text-[16px]", // using
       normal: "text-[12px] md:text-[14px]",
+      n2: "text-[14px] md:text-[15px]",
       sm: "text-[12px]", // using
     },
   },

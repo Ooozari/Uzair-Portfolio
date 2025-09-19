@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
 import { setDarkMode, toggleDarkMode } from "@/utils/theme";
-import { Switch } from "@/components/ui/switch"; // <-- your custom switch
+import { Switch } from "@/components/ui/switch";
+import { Paragraph } from "@/components/ui/typography";
 
 export default function Header() {
   const [darkMode, setDarkModeState] = useState(false);
@@ -21,7 +22,7 @@ export default function Header() {
           window.matchMedia("(prefers-color-scheme: dark)").matches);
 
       setDarkModeState(isDark);
-      setDarkMode(isDark); // apply
+      setDarkMode(isDark);
     }
   }, []);
 
@@ -77,14 +78,21 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-6 z-50 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-md border-1 border-gray-700 shadow-2xl shadow-gray-500/40 rounded-[20px] dark:border-dark-bg/20 w-[95%] md:max-w-2xl left-1/2 -translate-x-1/2">
-      <div className="container mx-auto px-4 sm:px-6 py-2 flex justify-between items-center">
-        <h1 className="text-3xl font-bold italic tracking-tight text-blue-600 dark:text-blue-400">
-          Uzair<span className="text-black dark:text-white">.</span>
+    <header
+      className="fixed top-4 z-50 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.3)] rounded-[16px] dark:border-dark-bg/20 w-[95%] md:max-w-2xl left-1/2 -translate-x-1/2 bg-page-bg"
+    >
+      <div className="container mx-auto px-2 sm:px-4 py-1 flex justify-between items-center">
+        <h1
+          className="text-3xl font-bold italic tracking-tight text-logo-primary [text-shadow:1px_1px_0_rgba(249,115,22,0.8),-1px_-1px_0_rgba(249,115,22,0.8)] dark:[text-shadow:1px_1px_0_rgba(249,115,22,1),-1px_-1px_0_rgba(249,115,22,1)]"
+        >
+          Uzair
+          <span className="text-[--color-logo-dot-light] dark:text-[--color-logo-dot-dark]">
+            .
+          </span>
         </h1>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 sm:gap-8 relative fancy-nav px-2 py-1 rounded-xl">
+        <nav className="hidden md:flex gap-6 sm:gap-8 relative fancy-nav px-2 py-1 rounded-xl items-center">
           <ul className="flex relative">
             {navItems.map((item) => (
               <li
@@ -95,10 +103,11 @@ export default function Header() {
                 <Link
                   href={`#${item}`}
                   className={`block px-4 py-2 font-bold capitalize relative z-10 transition-colors ${
-                    activeSection === item ? "text-white active" : "text-light"
+                    activeSection === item ? "text-light active" : "text-light-muted"
                   }`}
                 >
-                  {item}
+                  <Paragraph size='n2'>{item}</Paragraph>
+                  
                 </Link>
               </li>
             ))}
