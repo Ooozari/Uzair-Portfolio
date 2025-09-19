@@ -8,7 +8,7 @@ const headingVariants = cva("", {
     level: {
       h1: "text-[36px] sm:text-[42px] md:text-[50px] lg:text-[54px] xl:text-[60px] 2xl:text-[64px]",
        // using
-      lg: "text-[20px]",
+      lg: "text-[28px] md:text-[30px]",
       pageheading:
         "text-[28px] sm:text-[30px] md:text-[36px]",
         // using

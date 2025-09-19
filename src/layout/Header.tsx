@@ -4,7 +4,7 @@ import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
 import { setDarkMode, toggleDarkMode } from "@/utils/theme";
 import { Switch } from "@/components/ui/switch";
-import { Paragraph } from "@/components/ui/typography";
+import { Heading, Paragraph } from "@/components/ui/typography";
 
 export default function Header() {
   const [darkMode, setDarkModeState] = useState(false);
@@ -79,20 +79,18 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-4 z-50 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.25),inset_0_1px_1px_rgba(255,255,255,0.3)] rounded-[16px] dark:border-dark-bg/20 w-[95%] md:max-w-2xl left-1/2 -translate-x-1/2 bg-page-bg"
+      className="fixed top-4 z-50 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-md shadow-white shadow-2xl rounded-[var(--radius-md)] w-[95%] md:max-w-2xl left-1/2 -translate-x-1/2 bg-[--navbar-bg]"
     >
-      <div className="container mx-auto px-2 sm:px-4 py-1 flex justify-between items-center">
-        <h1
-          className="text-3xl font-bold italic tracking-tight text-logo-primary [text-shadow:1px_1px_0_rgba(249,115,22,0.8),-1px_-1px_0_rgba(249,115,22,0.8)] dark:[text-shadow:1px_1px_0_rgba(249,115,22,1),-1px_-1px_0_rgba(249,115,22,1)]"
+      <div className="container mx-auto px-3 sm:px-4 py-1 flex justify-between items-center">
+        <Heading
+          level="lg"
+          className="font-bold italic tracking-tight text-logo-primary [text-shadow:1px_1px_0_rgba(249,115,22,0.8),-1px_-1px_0_rgba(249,115,22,0.8)] dark:[text-shadow:1px_1px_0_rgba(249,115,22,1),-1px_-1px_0_rgba(249,115,22,1)]"
         >
-          Uzair
-          <span className="text-[--color-logo-dot-light] dark:text-[--color-logo-dot-dark]">
-            .
-          </span>
-        </h1>
+          Uzair.
+        </Heading>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 sm:gap-8 relative fancy-nav px-2 py-1 rounded-xl items-center">
+        <nav className="hidden md:flex relative px-1.5 py-1 fancy-nav rounded-xl items-center justify-between">
           <ul className="flex relative">
             {navItems.map((item) => (
               <li
@@ -102,35 +100,31 @@ export default function Header() {
               >
                 <Link
                   href={`#${item}`}
-                  className={`block px-4 py-2 font-bold capitalize relative z-10 transition-colors ${
-                    activeSection === item ? "text-light active" : "text-light-muted"
+                  className={`block px-3 py-2 font-bold capitalize relative z-10 transition-colors ${
+                    activeSection === item
+                      ? "text-light active"
+                      : "text-light-muted"
                   }`}
                 >
-                  <Paragraph size='n2'>{item}</Paragraph>
-                  
+                  <Paragraph size="n2">{item}</Paragraph>
                 </Link>
               </li>
             ))}
           </ul>
           {/* Hover/Active fancy background blob */}
           <span className="fancy-bg"></span>
-
           {/* Dark mode Switch */}
-          <Switch checked={darkMode} onCheckedChange={handleToggle} />
+          
         </nav>
+        <Switch className="hidden md:flex" checked={darkMode} onCheckedChange={handleToggle} />
+
 
         {/* Mobile + Dark Mode Toggle */}
         <div className="md:hidden flex items-center gap-2">
-          <button
-            onClick={handleToggle}
-            className="p-2 rounded-full hover:bg-light-bg/20 dark:hover:bg-dark-bg/20 transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
-          </button>
+            <Switch checked={darkMode} onCheckedChange={handleToggle} />
           <button
             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            className="p-2 rounded-md hover:bg-light-bg/20 dark:hover:bg-dark-bg/20 transition-colors"
+            className="p-2 text-white rounded-md hover:bg-light-bg/20 dark:hover:bg-dark-bg/20 transition-colors"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
@@ -150,7 +144,7 @@ export default function Header() {
                 activeSection === item ? "text-blue-500" : "hover:text-blue-500"
               }`}
             >
-              {item}
+              <Paragraph size="n2">{item}</Paragraph>
             </Link>
           ))}
         </div>
