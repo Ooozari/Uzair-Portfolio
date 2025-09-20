@@ -5,8 +5,9 @@ export default function LandingPage() {
   return (
     <div>
       <Hero />
-      <Skills />
+      
       <Projects />
+      <Skills />
       <Education />
       <Contact />
     </div>

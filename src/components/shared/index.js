@@ -4,4 +4,5 @@ export {default as Skills} from './Skills'
 export {default as Projects} from './Projects'
 export {default as Hero} from './Hero'
 export {default as SocialIcon} from './SocialIcon'
-
+export {default as LiveLabel} from './LiveLabel'
+export {default as InProgressLabel} from './InProgressLabel'

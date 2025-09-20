@@ -17,8 +17,8 @@ function Switch({
       checked={checked}
       onCheckedChange={onCheckedChange}
       className={cn(
-        "peer inline-flex h-[16px] w-[30px] md:h-[20px] md:w-[36px] shrink-0 items-center rounded-full border border-transparent shadow-xs transition-colors",
-        "bg-page-bg",
+        "peer inline-flex h-[16px] w-[30px] md:h-[20px] md:w-[36px] shrink-0 items-center rounded-full border border-transparent shadow-sm transition-colors",
+        "data-[state=checked]:bg-primary-alt/80 data-[state=unchecked]:bg-white/70",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
         "disabled:cursor-not-allowed disabled:opacity-50",
         className

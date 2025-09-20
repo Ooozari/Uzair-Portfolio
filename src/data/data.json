@@ -1,50 +1,103 @@
 {
   "hero": {
     "name": "Uzair Asif",
-    "role": "Frontend Web",
+    "role": "Full Stack Web",
     "location": "Faisalabad, Pakistan",
-    "tagline": "Crafting scalable, pixel-perfect web experiences for the past 6 months. I help businesses and corporates turn ideas into modern, responsive, and user-focused designs."
+    "tagline": "Over a year of front-end experience and 3+ months as a full-stack developer, building scalable, pixel-perfect, and responsive web applications for modern businesses."
   },
-  "skills": [
+  "skills": {
+  "frontend": [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "TypeScript",
     "React",
     "Next.js",
-    "TypeScript",
-    "TailwindCSS",
-    "Node.js",
-    "MongoDB"
+    "TailwindCSS"
   ],
+  "backend": [
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "REST APIs"
+  ],
+  "tools": [
+    "Git",
+    "GitHub",
+    "Figma",
+    "Postman",
+    "VS Code"
+  ]
+},
   "experience": [
     {
       "company": "Speecto Solutions",
       "role": "Full Stack Web Developer Intern",
       "duration": "3 Months",
-      "description": "Worked on full-stack web features using Next.js, TypeScript, and MongoDB."
+      "description": "Developed and maintained full-stack web applications using Next.js, TypeScript, and MongoDB. Implemented responsive, scalable, and user-friendly features for corporate clients. Collaborated with the team to optimize performance and enhance code quality."
     }
   ],
   "education": [
     {
       "degree": "BSc Computer Science",
-      "institution": "Your University Name",
+      "institution": "National Textile University",
       "year": "Final Year",
       "gpa": "3.6/4.0"
     }
   ],
-  "projects": [
-    {
-      "title": "Portfolio Website",
-      "description": "Personal portfolio showcasing my projects, skills, and experience.",
-      "tech": ["Next.js", "TypeScript", "TailwindCSS"],
-      "github": "https://github.com/yourusername/portfolio",
-      "demo": "https://yourportfolio.com"
-    },
-    {
-      "title": "E-commerce Store",
-      "description": "Full-stack e-commerce application with authentication and cart functionality.",
-      "tech": ["React", "Node.js", "MongoDB", "Express"],
-      "github": "https://github.com/yourusername/ecommerce",
-      "demo": "https://ecommerce-demo.com"
-    }
-  ],
+  "projects": {
+    "fullStack": [
+      {
+        "title": "TrueVoice",
+        "description": "Anonymous feedback platform allowing users to send and receive constructive feedback securely.",
+        "tech": ["Next.js", "TypeScript", "Node.js", "MongoDB", "TailwindCSS"],
+        "github": "https://github.com/yourusername/truevoice",
+        "demo": "https://truevoicehub.vercel.app",
+        "images": ["/projects/truevoice-thumbnail.png"],
+        "status": "Live"
+      },
+      {
+        "title": "ShifaHub",
+        "description": "Healthcare platform for managing appointments, patient data, and services, currently under development.",
+        "tech": ["React", "Node.js", "MongoDB", "Express", "TailwindCSS"],
+        "github": "https://github.com/yourusername/shifahub",
+        "demo": "https://shifahub-demo.com",
+        "images": ["/projects/shifahub-thumbnail.png"],
+        "status": "In Progress"
+      }
+    ],
+    "frontend": [
+      {
+        "title": "BashLite",
+        "description": "Front-end dashboard for managing content with interactive UI and dynamic components.",
+        "tech": ["Next.js", "JavaScript", "TailwindCSS"],
+        "github": "https://github.com/yourusername/cms-dashboard",
+        "demo": "https://bashlite.vercel.app/",
+        "images": ["/projects/cms-dashboard-thumbnail.png"],
+        "status": "Live"
+      }
+    ],
+    "uiClones": [
+      {
+        "title": "TheraMynd",
+        "description": "UI clone replicating the design and user experience of a healthcare web app.",
+        "tech": ["Next.js", "Shadcn UI", "JavaScript", "TailwindCSS"],
+        "github": "https://github.com/yourusername/thera-myanad",
+        "demo": "https://thera-mynd.vercel.app/",
+        "images": ["/projects/thera-myanad-thumbnail.png"],
+        "status": "Live"
+      },
+      {
+        "title": "Wandering Earl’s",
+        "description": "UI clone of a vendor management dashboard for demonstrating responsive and interactive designs.",
+        "tech": ["Next.js", "JavaScript", "TailwindCSS"],
+        "github": "https://github.com/yourusername/vendor-earl",
+        "demo": "https://wandering-tour-app.vercel.app/",
+        "images": ["/projects/vendor-earl-thumbnail.png"],
+        "status": "Live"
+      }
+    ]
+  },
   "contact": {
     "email": "mailto:uzairasiff1227@gmail.com",
     "linkedin": "https://www.linkedin.com/in/ooozari/",

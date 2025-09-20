@@ -79,8 +79,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-4 z-50 bg-primary/20 backdrop-blur-md border-1 border-primary-alt rounded-[var(--radius-md)] w-[95%] md:max-w-3xl left-1/2 -translate-x-1/2 shadow-[var(--navbar-shadow)]
-"
+      className="fixed top-4 z-50 bg-primary/20 backdrop-blur-md border-1 border-primary-alt/20 rounded-[var(--radius-md)] w-[95%] md:max-w-3xl left-1/2 -translate-x-1/2 shadow-[var(--navbar-shadow)]"
     >
       <div className="container mx-auto px-3 sm:px-4 py-0 flex justify-between items-center">
         <Heading

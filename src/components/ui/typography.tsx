@@ -7,6 +7,7 @@ const headingVariants = cva("", {
   variants: {
     level: {
       h1: "text-[36px] md:text-[40px] lg:text-[42px] xl:text-[44px] 2xl:text-[48px]",
+      h3: "text-[22px] md:text-[24px]",
        // using
       lg: "text-[28px] md:text-[30px]",
       md: "text-[22px] md:text-[24px]",
@@ -31,6 +32,7 @@ type HeadingLevel = NonNullable<VariantProps<typeof headingVariants>["level"]>
 
 const headingTagMap: Record<HeadingLevel, keyof React.JSX.IntrinsicElements & keyof HTMLElementTagNameMap> = {
   h1: "h1",
+  h3: "h3",
   lg: "h1",
   md: "h2",
   pageheading: "h1",
