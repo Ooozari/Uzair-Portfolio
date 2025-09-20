@@ -1,7 +1,7 @@
 export {default as Contact} from './Contact'
 export {default as Education} from './Education'
-export {default as Hero} from './Hero'
 export {default as Skills} from './Skills'
 export {default as Projects} from './Projects'
-export {default as Code} from './Code'
+export {default as Hero} from './Hero'
+export {default as SocialIcon} from './SocialIcon'
 

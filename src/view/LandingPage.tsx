@@ -1,10 +1,9 @@
-import { Hero,Skills,Education,Contact,Projects, Code } from '@/components/shared'
-import { Footer,Header } from '../layout'
+import { Hero,Skills,Education,Contact,Projects} from '@/components/shared'
+
 
 export default function LandingPage() {
   return (
     <div>
-      <Code />
       <Hero />
       <Skills />
       <Projects />

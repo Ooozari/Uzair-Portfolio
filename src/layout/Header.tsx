@@ -79,9 +79,10 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-4 z-50 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-md shadow-white shadow-2xl rounded-[var(--radius-md)] w-[95%] md:max-w-2xl left-1/2 -translate-x-1/2 bg-[--navbar-bg]"
+      className="fixed top-4 z-50 bg-primary/20 backdrop-blur-md border-1 border-primary-alt rounded-[var(--radius-md)] w-[95%] md:max-w-3xl left-1/2 -translate-x-1/2 shadow-[var(--navbar-shadow)]
+"
     >
-      <div className="container mx-auto px-3 sm:px-4 py-1 flex justify-between items-center">
+      <div className="container mx-auto px-3 sm:px-4 py-0 flex justify-between items-center">
         <Heading
           level="lg"
           className="font-bold italic tracking-tight text-logo-primary [text-shadow:1px_1px_0_rgba(249,115,22,0.8),-1px_-1px_0_rgba(249,115,22,0.8)] dark:[text-shadow:1px_1px_0_rgba(249,115,22,1),-1px_-1px_0_rgba(249,115,22,1)]"
@@ -103,7 +104,7 @@ export default function Header() {
                   className={`block px-3 py-2 font-bold capitalize relative z-10 transition-colors ${
                     activeSection === item
                       ? "text-light active"
-                      : "text-light-muted"
+                      : "text-light-subtle"
                   }`}
                 >
                   <Paragraph size="n2">{item}</Paragraph>
